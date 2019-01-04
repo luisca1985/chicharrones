@@ -20,8 +20,8 @@ module.exports = function(){
 		app.use(compress());
     }
 
-    // Usar las funciones middleware 'body-parser' y 'method-override'
-	app.use(express.urlencoded());
+    // Usar las funciones middleware 'express' y 'method-override'
+	app.use(express.urlencoded({ extended: true }));
 	app.use(express.json());
 	app.use(methodOverride());
 

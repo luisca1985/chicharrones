@@ -5,7 +5,11 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Cargar las dependencias de módulos
+const mongoose = require('./config/mongoose');
 const express = require('./config/express');
+
+// Crear una nueva instancia conexión Mongoose
+var db = mongoose();
 
 // Crear una nueva instancia aplicación Express
 var app = express();
