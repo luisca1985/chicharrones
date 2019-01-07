@@ -23,7 +23,11 @@ module.exports = function(){
     // Usar las funciones middleware 'express' y 'method-override'
 	app.use(express.urlencoded({ extended: true }));
 	app.use(express.json());
-	app.use(methodOverride());
+    app.use(methodOverride());
+    
+
+    // Cargar los archivos de enrutamiento
+	app.use('/api/users',require('../routes/users.server.routes.js'));
 
     // Devolver la instancia de la aplicación Express
     return app;
